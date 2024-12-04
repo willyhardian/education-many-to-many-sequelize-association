@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             // Project.hasMany(models.UserProject);
             Project.belongsToMany(models.User, {
-                through: models.UserProject, // super many to many
+                through: models.UserProject, // super many to many https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
             });
         }
 

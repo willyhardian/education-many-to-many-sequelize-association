@@ -8,8 +8,8 @@ app.get("/", async (req, res) => {
         include: {
             model: User, // to do many to many or super many to many, we do User include to Project directly
             // through: {
-            //     attributes: ["id", "role"], // Specify fields to include from the junction table
-            // },
+            //     attributes: ["id", "role"], // Specify fields to include from the junction table https://sequelize.org/docs/v6/core-concepts/assocs/#foobelongstomanybar--through-baz-
+            // }, //
         },
     });
 
