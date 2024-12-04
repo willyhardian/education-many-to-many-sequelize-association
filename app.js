@@ -4,9 +4,12 @@ const port = 3000;
 const { User, Project, UserProject } = require("./models/index.js");
 
 app.get("/", async (req, res) => {
-    const users = await User.findAll({
+    const users = await Project.findAll({
         include: {
-            model: Project, // to do many to many or super many to many, we do User include to Project directly
+            model: User, // to do many to many or super many to many, we do User include to Project directly
+            // through: {
+            //     attributes: ["id", "role"], // Specify fields to include from the junction table
+            // },
         },
     });
 
